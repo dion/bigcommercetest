@@ -63,9 +63,10 @@
     "webpack-merge": "~4.1.2"
   },
   "scripts": {
-    "start": "stencil start --theme-editor-port 80",
+ #   "start": "stencil start --theme-editor-port 80",
     "build": "npx webpack --config webpack.prod.js",
     "buildDev": "npx webpack --config webpack.dev.js",
     "lighthouse": "npx lighthouse --config-path=lighthouse-config.js --quiet --output json --chrome-flags=\"--headless\" $URL | jq '.audits | map_values(.rawValue)'"
+    "heroku-postbuild": "stencil start --theme-editor-port 80"
   }
 }
